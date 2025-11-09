@@ -1,0 +1,26 @@
+# Define the minimum iOS platform version
+platform :ios, '17.0'
+
+target 'MoviePickerApp' do
+  # Use dynamic frameworks for Swift packages
+  use_frameworks!
+  use_modular_headers!
+
+  # Pods for MoviePickerApp
+  pod 'Alamofire', '~> 5.9'          # Networking
+  pod 'SDWebImageSwiftUI', '~> 2.0'  # Image caching + SwiftUI AsyncImage replacement
+  pod 'ReachabilitySwift', '~> 5.2'  # Network reachability
+  pod 'SwiftyJSON', '~> 5.0'         # JSON parsing convenience
+
+  # Unit Tests
+  target 'MoviePickerAppTests' do
+    inherit! :search_paths
+    pod 'Quick', '~> 7.0'
+    pod 'Nimble', '~> 12.0'
+  end
+
+  # UI Tests
+  target 'MoviePickerAppUITests' do
+    inherit! :search_paths
+  end
+end
